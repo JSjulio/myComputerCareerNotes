@@ -1693,45 +1693,53 @@ default gateway
     -Normally used with manual mounting 
     
     * /media 
-    -Distros now automatically mount media here  
-        -i.e: USB drives, CD-ROMs, external hard drives. 
-        
-        -i.e: USB would be @ Media/username/device name
+    -Distros now automatically mount external mounts to the media directory  
+    -including USB drives, CD-ROMs, external hard drives. 
+    -i.e: USB would be @ Media/username/device name
 
+    * /opt (optional)
+    -Manually installed software from vendors live here 
+     -& 3rd-party applications that don't fit the standard Unix directory structure as well.  
+    -VPN, printer software, self-written software 
 
-    * /opt 
-    (optional) Optional/add-on software packages. Third-party applications that don't fit the standard Unix directory structure often install here. 
-
-    /proc - (processes) Virtual filesystem providing process and kernel information. 
+    * /proc - (processes) 
+    -Pseudo files that contain process and kernel information. 
+    -Contains runtimes system info on:  
+        /proc/cpuinfo 
+        /proce/meminfo
+        /proc/[PID]
+ 
     
-        Contains runtimes system info: 
-            /proc/cpuinfo 
-            /proce/meminfo
-            /proc/[PID]
-        directories for each running process. Files ere don't actually exisdt on disk... They are generated on the fly 
-    
-    /run - Runitime data for processes started since last boot. PID files, lock files, sockets. Cleared on reboot. 
+    * /run - 
+    -Stores runtime data since last boot
+    -TemptFS - everything is done here on reboot 
+     -i.e: PID files, lock files, sockets. Cleared on reboot. 
 
-    /srv - (serve) Data for services provided by the system. Keeps services data organized 
-        i.e: 
-            -Web server files, 
-            -FTP data, 
-            -repository data.  
+    * /srv - (service directory)
+    -Server files accessed by external users would be stored here. 
+    -server files include: 
+        -Web server files, 
+        -FTP data, 
+        -repository data.  
 
-    /sys - (system) Virtual filesystem exposing kernel objects, hardware info, and device drivers. Similar to proc but more structured. Used for hardware and driver information. 
+    * /sys - (system) 
+    -A way to interact with the kernel 
+    -Created every boot 
+    -Virtual filesystem exposing kernel objects, hardware info, and device drivers. 
+    -Similar to proc but more structured. Used for hardware and driver information. 
 
-    tmp - (temporary) - these files are created by applications and users. Usually cleared on reboot. World-writable but with sticky bit for security. 
+    *tmp - (temporary) 
+    -files temporarily stored by apps and users. Usually cleared on reboot. 
+    -i.e: you are writing a document in word, the cpu will save a copy here in case of crash  
+    -emptied on reboot normally 
 
-    usr - (Unix System Resources) Secondary hiearchy containing user utilities and applications: 
-    contains: 
+    *usr - (Unix System Resources)
+    -Non-essential for basic system operation 
+    -Applications/;software installed by the user are here
+    -They are termed "secondary hiearchy" 
 
-        /usr/bin - non-essential user commands 
-        /usr/sbin - non-essential system binaries 
-        /usr/lib - libraries for /usr/bin and usr/sbin 
-        /usr/local - locally compiled/installed software 
-        /usr/share - architecture-independent shared data (docs, icons, fonts) 
-
-    /var - (variable) Variable data that changes during system operation 
+    * /var (variable) 
+    Variable data that changes during system operation 
 
         /var/log - log files 
         /var/cache - application cache data 
