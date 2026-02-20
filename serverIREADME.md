@@ -1,8 +1,7 @@
-# Weekly Skeleton 
+# Weekly Study Structure 
 
     # Week 
-
-
+<!-- Per G ensure to study: at home ready labs, vids, lectures.  -->
 
     ## Batttle Plan
     <!-- 
@@ -11,23 +10,30 @@
 
     *2. (a) Videos & their questions
 
-    *3. Learning lab 
+    *3. At Home Graded Labs 
 
-    *4. Study Guide Notes 
+    *4. Learning lab 
 
-    *5. Final Exam Review
+    *5. Study Guide Notes 
 
-    *6. Homework Questions fdg -->
+    *6. Final Exam Review
+
+    *7. Homework Questions -->
+
+
+    at home ready labs, vids, lectures. 
 
     ## Lectures 
 
+
+    ## Learning labs (Flex)
 
 
     ## Video & Their Questions  
 
 
 
-    ## Learning labs (Flex)
+    ## At Home Graded Labs
 
 
 
@@ -41,7 +47,6 @@
 
     ## Homework Assingment  
 
-
 # Course Overview  
 <!--  
     WEEKLY HOURS: 
@@ -49,7 +54,7 @@
         - 30 AT HOME GRADED LABS 
 
 
-    ? Week 1
+    ?Week 1
     -Apply advanced installation configurations for the Linux Operating System with customized partition schemes for better security.
     -Analyze and manage various processes in the Linux Operating System using the BASH command line tool.
     -Power Skill - Work Ethic
@@ -74,18 +79,10 @@
     -Conduct reviews of file permission configurations to identify potential security vulnerabilities.
     -Power Skill - Collaboration & Empathy
 
+    ?#Linux Practice Exams 
+    https://www.udemy.com/course/linux-essentials-practice-exams/
+
  -->
----------------------------------------------------------------
-
-
-
-
-
-                            START!!!
-
-
-
-
 
 
 
@@ -98,17 +95,20 @@
  ?Linux OS overvierw / Popular Open Source Apps & Distros / Vocab  
  
  Task List 
-  *1. Lectures 
 
-    *2. (a) Videos & their questions
+    //1. Lectures 
 
-    *3. Learning lab 
+    //2. (a) Videos & their questions
 
-    todo 4. Study Guide Notes 
+    //3. At Home Graded Labs 
 
-    *5. Final Exam Review
+    //4. Learning lab 
 
-    *6. Homework Questions fdg -->
+    *5. Study Guide Notes 
+
+    //6. Final Exam Review
+
+    //7. Homework Questions -->
 
 
 ## Lectures: 
@@ -485,17 +485,28 @@ Network Layer
   -->
 
 
-## Study Guide 
-<!-- 
 
-Goal: Skim through.. new information you'll place here. 
+## Learning labs (Flex)
 
 
 
+## Study Guide Notes 
 
 
 
- -->
+## Final Exam Review
+
+
+
+## Homework Assingment  
+
+
+
+
+
+
+
+
 
 # Week 2 -  
 
@@ -504,15 +515,15 @@ Goal: Skim through.. new information you'll place here.
 
     //1. Lectures 
 
-    todo 2. (a) Videos & their questions
+    // 2. (a) Videos & their questions
 
-    *3. Learning lab 
+    //3. Learning lab & or 
+    
+    todo 4. Study Guide Notes 
 
-    *4. Study Guide Notes 
+    //5. Final Exam Review
 
-    *5. Final Exam Review
-
-    *6. Homework Questions fdg 
+    //6. Homework Questions 
 
 
 -->
@@ -563,8 +574,8 @@ $ - Default prompt at the beginning of the termainl | Showcases you are a regula
 
 rm - deletes a file or directory 
 
-    rm -r 'name of directory that has subdirectory' 
-        = deletes the entire directory 
+    rm -r - delete a directory with contents 
+    
 
     i.e: 
 
@@ -619,10 +630,7 @@ mkdir - makes a directory
                     -p flag means:
                             Create parent directories if needed - If you specify a path like mkdir -p folder1/folder2/folder3, it will create all three folders even if folder1 and folder2 don't exist yet
 
-
-
-
-
+suo
 ?Navigational commands 
     h or H - displays help on using less 
 
@@ -659,6 +667,16 @@ find . name "*.txt" is a script to find a particular file.
 
 
 ls -l 
+    long listing which provides file type data (extensions)
+
+    type-----#--username----date---time----filename 
+    d....                                -> directory 
+    r....                                -> file
+    l....                                -> linked file 
+
+    Note: file ext does not determine file type, the content does. 
+
+        'file' - provides information on the typo of file a file really is 
 
 
 chmod - changes permissions on a docs 
@@ -958,6 +976,68 @@ Options
   -->
 
 
+## At Home Graded Lab 
+
+<!-- 
+
+
+Question at position 1 
+
+1. Which file should you edit for Sendmail configuration?
+
+       * /etc/mail/sendmail.mc
+
+
+2. Which directory stores the mail databases?
+
+    * /etc/mail
+
+
+3. In which directory is the aliases file stored?
+
+    * /etc
+
+
+4. Which command is used to generate the /etc/mail/sendmail.cf file?
+
+    *make
+
+5. Which command should you use to switch to the Sendmail MTA?
+
+    * alternatives --config mta
+
+
+
+--------------
+
+To navigate to the end of a line, press ______.
+
+$
+
+
+If you have more lines in the file, then you can jump a specific number of lines by entering ______ along with _____.
+
+#, j
+
+
+To navigate to the end of a word, press ____ and you will jump to the end of the word.
+e
+
+
+When working with the vi editor, other than pressing “I”, pressing which another key will invoke the insert mode?
+-a
+
+
+
+In the command mode, pressing which letter would move one character to the left?
+
+h
+
+
+ -->
+
+
+
 ## Homework
 
 <!-- 
@@ -1248,85 +1328,16 @@ Question 42: Which two keyboard characters can denote an account with no passwor
    x /home - for contains user profile directories.
 
 
------------------Let's Break this down:
-
-    / - (root) The top-level directory - everything starts here. Contains all other directories in the filesystem 
-
-    /sbin - (system binaries) - system administration binaries, typically requiring root privileges. 
-
-        /library & /lib64 - shared libraries needed by binaries in  /bin & /sbin 
-
-    /bin - (binaries) Essential User Commands Binaries needed for single-user mode and basic system operation. 
-        i.e: ls, cp, mv, cat, bash, chmod 
-
-    /boot - Files needed to boot the system 
-        contains: kernel images, bootloader configuration (GRUB), initial RAM disk images, Critical 4 startup
-
-    /dev - (devices) Devices files (both hardware/psuedo-devices)
-        i.e: 
-            a.dev/sda - hardware devices 
-            b.dev/tty - terminal 
-            c.dev/null & dev/random - allow for programs to
-            d. interact with harware through files operations
-
-    /etc (et cetera) - System-wide configuration files and shell scripts. 
-
-    /home - are user home directories, where each user get's their own directory (home/jsjulio)
-
-    /root - home directory for the root user (superuser). This is seperate from /home for security and access reasons 
-
-    /media - mount points for removable media: USB drives, CD-ROMs, external hard drives. Automatically managed by modern systems. 
-
-    /mnt - (mount) temporary mount points for filesystems. Traditionally used by admins to manually mount drives or network shares. 
-
-    /opt - (optional) Optional/add-on software packages. Third-party applications that don't fit the standard Unix directory structure often install here. 
-
-    /proc - (processes) Virtual filesystem providing process and kernel information. 
-    
-        Contains runtimes system info: 
-            /proc/cpuinfo 
-            /proce/meminfo
-            /proc/[PID]
-        directories for each running process. Files ere don't actually exisdt on disk... They are generated on the fly 
-    
-    /run - Runitime data for processes started since last boot. PID files, lock files, sockets. Cleared on reboot. 
-
-    /srv - (serve) Data for services provided by the system. Keeps services data organized 
-        i.e: 
-            -Web server files, 
-            -FTP data, 
-            -repository data.  
-
-    /sys - (system) Virtual filesystem exposing kernel objects, hardware info, and device drivers. Similar to proc but more structured. Used for hardware and driver information. 
-
-    tmp - (temporary) - these files are created by applications and users. Usually cleared on reboot. World-writable but with sticky bit for security. 
-
-    usr - (Unix System Resources) Secondary hiearchy containing user utilities and applications: 
-    contains: 
-
-        /usr/bin - non-essential user commands 
-        /usr/sbin - non-essential system binaries 
-        /usr/lib - libraries for /usr/bin and usr/sbin 
-        /usr/local - locally compiled/installed software 
-        /usr/share - architecture-independent shared data (docs, icons, fonts) 
-
-    /var - (variable) Variable data that changes during system operation 
-
-        /var/log - log files 
-        /var/cache - application cache data 
-        /var/spool - Print queques, mall queques 
-        /var/tmp - Temporary files perserved between reboots 
-        /var/www - Webs server content 
-
-
 8. Which linux comman provides the information by displaying the names of files in directory 
 
     ln - this means make links between files  
 
     mv 
 
-    cp 
-
+    cp - 
+        i.e: cp etc/fstab .  
+            ^your copying a file from etc/fstab to current d
+    
     mkdir 
 
     *ls - list all files ina directory 
@@ -1360,17 +1371,17 @@ Question 42: Which two keyboard characters can denote an account with no passwor
 ## Battle Plan 
 <!-- 
 
-    *1. Lectures 
+    //1. Lectures 
 
-    *2. (a) Videos & their questions
+    //2. Videos & their questions (skipped over)
 
-    *3. Learning lab 
+    //3. Learning lab (briefly) 
 
-    *4. Study Guide Notes 
+    todo 4. Study Guide Notes 
 
-    *5. Final Exam Review
+    //5. Final Exam Review (skip)
 
-    *6. Homework Questions fdg -->
+    todo 6. Homework Questions -->
 
  -->
 
@@ -1379,41 +1390,41 @@ Question 42: Which two keyboard characters can denote an account with no passwor
 
 ?Commands 
 
-ln - (soft link) creates a clickable tethers a file to another file ....does not work with directories 
+*ln - link
+creates a low-level file tethering one file to another... allowing you to reference the same file throuh either name. 
 
-    hard link is another name for the same thing 
-    ! https://www.youtube.com/watch?v=JpS5sY8KWPU
+    hard link: duplicate directory entry. both entries = one file (originname | linkname)
+
+    soft link: a file that holds another file's name and redirects to it. 
 
     ->Attempt to do this! 
 
-nano -> opens up a scripting tool 
+        nano -> opens up a scripting tool 
 
-#!/bin/bash - initiates a script 
+        #!/bin/bash - initiates a script 
 
-    *script: 
-    #!/bin/bash
-    clear 
-    echo "SYSTEM HACKED!" 
-    sleep 5 
-    echo "Files breached! Pay me NOW.. I want BITCOINS" 
-    sleep 3 
-    echo "10 seconds left....." 
-    for i in {10..1}; do 
-        echo -n "$i..." 
-        sleep 2
-    done
-    clear 
-    echo "GOTCHA! I'm just joking >:}" 
-    echo "Real malware uses fear tactics like this!!!" 
+            *script: 
+            #!/bin/bash
+            clear 
+            echo "SYSTEM HACKED!" 
+            sleep 5 
+            echo "Files breached! Pay me NOW.. I want BITCOINS" 
+            sleep 3 
+            echo "10 seconds left....." 
+            for i in {10..1}; do 
+                echo -n "$i..." 
+                sleep 2
+            done
+            clear 
+            echo "GOTCHA! I'm just joking >:}" 
+            echo "Real malware uses fear tactics like this!!!" 
 
-    *here the G used: 
-        -echo + for loop 
-        -chmod - change permissions to allow for the script to run
-        - ./ - to actually run the file 
-        - "$asdfa" is creation of a variable 
+            *here the G used: 
+                -echo + for loop 
+                -chmod - change permissions to allow for the script to run
+                - ./ - to actually run the file 
+                - "$asdfa" is creation of a variable 
 
-
-! - check study material within Canvas! Let's actually get all the work completed 
 
 uname - tells you your OS and system details 
 
@@ -1495,7 +1506,15 @@ apt search keyword
 grep -i error filename 
     grep searches for text patterns in files.
 
-! complete the final after getting caught up 
+--color 
+color codes directories based on importance
+
+-F 
+    classify file type 
+
+-R 
+    recursive 
+
 
 
 
@@ -1595,6 +1614,62 @@ default gateway
  -->
 
 
+## At Home Graded Labs
+
+<!-- 
+
+Which parameter should you use with the ping command to send a specific number of requests?
+
+    -c 
+
+Which of the following command requires root privileges?
+
+    traceroute
+
+In which directory is the route command stored?
+
+    /sbin 
+
+To display instant results with the route command, which parameter should you use?
+
+    -n 
+
+
+Which parameter of the route command specifies the network?
+
+-net 
+
+
+------
+
+What is the standard permission for directories?
+
+    777
+
+Which command displays values like when last accessed, modified, or changed for a specific file?
+    
+    stat
+
+
+What is the octal value of execute permission?
+    
+    1
+
+What is the standard permission for files?
+    
+    666
+
+
+What is the octal value for the -rw-rw-rw- permission?
+    
+    666
+
+
+
+
+
+ -->
+
 ## Learning Lab 
  <!-- 
  
@@ -1670,7 +1745,7 @@ default gateway
 
         2. essential software tools 
             i.e: 
-                a.dev/sda - hardware devices 
+                a.dev/sda - hardware devices f
                 b.dev/tty - terminal 
                 c.dev/null & dev/random - allow for programs to
                 d. interact with harware through files operations
@@ -1683,7 +1758,15 @@ default gateway
             -you could find a list of what repos the system connects to here     
 
     * /home
-    are user home directories, where each user get's their own directory (home/jsjulio)
+    -each user has their own home folder 
+    -each user get's their own directory (home/jsjulio)
+    - "./home" - start with a "." & are hidden directories 
+        -ls -a to show all files
+        -hidden directories store: cache, thumbnails etc. 
+ 
+    -directories here have application settings as well 
+
+
 
     * /mnt 
     -where you would find temporary mounted drives
@@ -1762,6 +1845,14 @@ default gateway
 <!-- 
 
 
+
+
+
+
+
+
+
+
  -->
 
 
@@ -1781,3 +1872,175 @@ default gateway
  
  
   -->
+
+
+
+
+# Week 4 
+
+
+## Batttle Plan
+<!-- 
+
+//1. Lectures (no notes)
+
+//2. Videos & their questions (skipped)
+
+//3. At Home Graded Labs(briefly)
+
+//4. Learning lab 
+
+todo 5. Study Guide Notes 
+
+ todo 6. Final Exam Review
+
+todo 7. Homework Questions -->
+
+
+## Lectures 
+<!-- 
+
+? Vocabulary
+
+Permissions in Linux 
+    rwx - read, write, execute 
+
+UGO order  
+    user|group|others- 
+
+    i.e:    -rwxr-
+
+Special numbers? 
+x- 1
+w- 2
+r- 4
+    create hother permissions 
+    rwx-order of how permission are written 
+
+    3 -wx 
+    4 
+
+! Review 7 combinations of Permissions video 
+
+
+? Commands 
+
+chmod - changes permissions of a file/directory 
+
+chown - changes ownwership / priveledge of a user 
+
+
+
+
+
+ -->
+
+
+
+## Learning labs (Flex)
+
+
+## Video & Their Questions  
+
+
+
+## At Home Graded Labs
+<!-- 
+
+ What is the default value of SGID?
+    2
+
+To remove the write permissions for a group, which two parameters should you use with the chmod command?
+    g-w
+
+What is the octal value of SUID?
+    4000
+
+Which command would you use to view the assigned SGID?
+ls 
+    ls-ld
+
+What is the default value of SUID?
+    4
+
+
+--------
+
+
+
+
+ -->
+
+
+
+## Study Guide Notes 
+
+
+
+## Final Exam Review
+
+
+
+## Homework Assingment  
+
+
+
+
+
+# Week 5
+
+ ## Batttle Plan
+    <!-- 
+
+    *1. Lectures 
+
+    *2. (a) Videos & their questions
+
+    *3. At Home Graded Labs 
+
+    *4. Learning lab 
+
+    *5. Study Guide Notes 
+
+    *6. Final Exam Review
+
+    *7. Homework Questions -->
+
+
+
+
+## Lectures 
+
+
+
+
+## Learning labs (Flex)
+
+
+
+
+
+## Video & Their Questions  
+
+
+
+
+
+## At Home Graded Labs
+
+
+
+
+
+## Study Guide Notes 
+
+
+
+
+
+
+## Final Exam Review
+
+
+
+## Homework Assingment  
