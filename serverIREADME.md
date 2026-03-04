@@ -1,51 +1,6 @@
 # Weekly Study Structure 
 
-    # Week 
-<!-- Per G ensure to study: at home ready labs, vids, lectures.  -->
-
-    ## Batttle Plan
-    <!-- 
-
-    *1. Lectures 
-
-    *2. (a) Videos & their questions
-
-    *3. At Home Graded Labs 
-
-    *4. Learning lab 
-
-    *5. Study Guide Notes 
-
-    *6. Final Exam Review
-
-    *7. Homework Questions -->
-
-
-    at home ready labs, vids, lectures. 
-
-    ## Lectures 
-
-
-    ## Learning labs (Flex)
-
-
-    ## Video & Their Questions  
-
-
-
-    ## At Home Graded Labs
-
-
-
-    ## Study Guide Notes 
-
-
-
-    ## Final Exam Review
-
-
-
-    ## Homework Assingment  
+   
 
 # Course Overview  
 <!--  
