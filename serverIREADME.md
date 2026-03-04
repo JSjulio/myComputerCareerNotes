@@ -531,221 +531,339 @@ Network Layer
 ## Lectures 
 <!-- 
 
-? Commands 
+? Commands / Directories 
 
-CLI, 
+*CLI 
+    tool used to interface between client and computer 
 
-Shell, 
+*Shell
+    actual program that interfaces between the user and the operating system's kernel 
 
-Bash or (Bourne again Shell) 
-    -common in most Linux distros
-    -is a translator it taskes the CLI commands, translates them for the kernel
-    -'feature rich commands'
-
+*Bash or (Bourne again Shell) 
+    -Shell common in most Linux distros
+    -is a translator that taskes the CLI commands, translates them to kernel language. 
   
-Dash - is a lightweight, faster, POSIX compliant shell optimized for systems scripts and booting 
+*Dash 
+is a lightweight, fast shell optimized for systems scripts & booting 
 
-Man (manual pager utils) - assist with providing command functionality   
+*Man 
+(manual pager utils), assist with providing command function information 
   
-pwd (priting working directory) - tells you what directory you are currently in. 
+*info 
+same thing as man 
 
-ls - list directory content 
+*pwd 
+(priting working directory), tells you what directory you are currently in. 
 
-    -a (include files that are hiding 
-    -l (long listing format)
+*ls 
+list directory the client is in  
 
-ls /bin - shows all essential utils that come with the parent OS 
-
-/usr/bin - contains most user commands
-
-/usr/local/bin - contains user intalled software 
-
-/sbin - contains binaries that are used by root (booting, mounting, repairing systems, and system administration) 
-
-usr/sbin - non essential tools, not for booting, used by system admin
-
-usr/local/sbin - admin tools typically installed by the admin, not essential for booting 
-
-cd - change directory
-
-$ - Default prompt at the beginning of the termainl | Showcases you are a regular user 
-
-~ - shortcut for home directory /.../.../etc.. directory 
-
-rm - deletes a file or directory 
-
-    rm -r - delete a directory with contents 
+    *Flags
+    -a, include files that are hiding 
+    -l, long listing format
     
+    *ls /bin, 
+    shows all essential user commands required for system operation, can be used by all users 
+
+* /usr/bin 
+location for user-level applications that are part of the standard system installation but not strictly needed for the system to boot into single user mode 
+
+* /usr/local/bin
+contains custom software installations 
+
+* /sbin 
+contains system essential binaries user for 
+    -booting 
+    -mounting 
+    -repairing systems 
+    -system administration 
+
+
+
+* usr/local/sbin
+    system administration programs that are isntalled locally and are specified to a specific host 
+
+*cd 
+    change directory navigational command
+
+*$ (at the beginning of a terminal sentence)
+Signifies a regular user without admin rights  
+
+* ~
+shortcut for the /home directory 
 
     i.e: 
+    scenario: you want to access a file in /home/isaias/Desktop/School/file.txt
+        
+        so in this case  = "/home/isaias"
 
-        -rm -r G
-            (the r is for recursive)
-            (files deleted on Linux are deleted permanently)
+        *answer: cd ~/Desktop/School 
 
+*rm 
+deletes a file or directory 
 
-mv- moves a file to a different location , can also change the name and move 
-
-
-cp - copies a file or directory under a new location 
-
-    (ii) cp -R users/jsjulio/Games - copies all of the files within that directory 
-
-
-
-ln - creates a symbolic link (shortcut to a file)
-
-touch - creates or updates a file from the command line 
-
-head - outputs the first 10 lines for a file 
-
-tail - outputs the last 10 lines of a file 
-
-free - displays the total amount of free/used memory in the system, 
-
-echo - 
-    i. can send information to the console
-    ii. displays variables 
-    iii. displays multiple items 
-    iv.  echo "you are the best" >> g.txt 
-
-cat - displays file content (alias is Get-Content)
+    *Flags 
+    rm -r, recursively delete a directory and it's file 
+        [use this when a directory contains files]
+    
+*mv
+    move a file | can also rename a file 
 
 
-sudo adduser "string" - allows you to add a root user 
+Scenario #1:
+     You want to move a file located at 
+    [/home/jsjulio] .. needs to be moved to /Destkop 
 
-whoami - give you information on current user. 
-            -you can use whoami all/ 
+    *answer: mv ~/file1.txt ~/Desktop/ 
+                (source) -> (destination)            
 
-whatis - gives you information on what a command is 
+Scenario #2: 
+    You want to move the file into Desktop from folder1 and change the name to phile1.txt 
 
-apropos - it's like 'man' , but give you quicker description
-
-man - gives you information on a command 
-
-mkdir - makes a directory 
-
-       (ii) mkdir -p games/ps5/shooterGames  
-
-                    -p flag means:
-                            Create parent directories if needed - If you specify a path like mkdir -p folder1/folder2/folder3, it will create all three folders even if folder1 and folder2 don't exist yet
-
-suo
-?Navigational commands 
-    h or H - displays help on using less 
-
-    Page down/spacebar/ctrl + V/ Ctrl+f = moves down one screen 
-
-    Page up/Esc+V/b/ctrl+b - Moves up on screen 
-
-    xg or x< - does to line 'x' within the document 
+    *answer: mv ~/folder1.txt/file1.txt ~/Desktop/phile1.txt 
+                (source original name) -> (Destination/newname)
 
 
+*cp 
+copies a file or directory under a new location 
 
-?Definitions 
+    scenario: I want to copy the directory folder1, located in my home directory, along with everything inside it, and place it into the Desktop folder
 
-Linux follows the FHS (File Hiearchy Standard)
+    *answer: cp -r ~/folder1 ~/Desktop/ 
 
+    scenario: I want to just copy a file from one directory to another
 
-<!-- Day 2 started here  
-?Commands / tools 
-
-echo 
-    echo "you are the best" >> g.txt - inserts characters within the quotes into the file 
-    echo "i intend to overwrite this file" > g.txt - rewrites the file
-
-nano g.txt - can be used to edit specific files 
-
-sudo 'apt' install emacs = (apt means Advanced Package Tool) 
-
-grep (global regular expression print) - is used to find text within files [kinda like a search file]  
-
-    grep "grep" file1.txt  - searches file1.txt for "grep" | grep "grep" *.txt - searches all text files for "grep"
+    *answer: cp ~/folder1 ~/Desktop/ 
 
 
-find . name "*.txt" is a script to find a particular file. 
+*ln 
+creates a symbolic link (shortcut to a file)
+
+*touch f
+creates or updates a file from the command line 
+
+*head
+outputs the first 10 lines for a file 
+
+*tail  
+outputs the last 10 lines of a file 
+
+*free 
+ displays the total amount of free/used memory in the system, 
+
+*cat
+displays file content (alias is Get-Content)
+
+*sudo adduser "string" 
+ adds a root user 
+
+*whoami
+give you information on current user. 
+    
+*id
+shows your user ID, group ID, and all groups your user belongs to 
+
+*whatis
+give you a one line description of what a command does 
+
+*apropos
+also gives you a brief description of what a command does 
+
+*man 
+gives you information on a command 
+
+*mkdir 
+makes a directory 
 
 
-ls -l 
-    long listing which provides file type data (extensions)
-
-    type-----#--username----date---time----filename 
-    d....                                -> directory 
-    r....                                -> file
-    l....                                -> linked file 
-
-    Note: file ext does not determine file type, the content does. 
-
-        'file' - provides information on the typo of file a file really is 
+    *Flags
+       mkdir -p - recursively creates folders that do no exist if you spell it out for it. 
+       
+       scenario: I want to create a "shhoterGames dir within games/ps5
+          
+           *answer: mkdir -p games/ps5/shooterGames  
 
 
-chmod - changes permissions on a docs 
+*--h 
+ displays information about the command in question   
 
-WC - lines, words, and characters 
+* su
+can switch user... when no user is specified this allows switching to the root user 
 
-sort - along with cat allows you to display text files sorted
+
+*echo 
+    -echo "you are the best" >> g.txt - inserts characters within the quotes into the file 
+
+    -echo "i intend to overwrite this file" > g.txt - overwrites the file with that string entirely. 
+    
+    -can also be used to print things to the console 
+
+
+*nano path/to/file/g.txt 
+can be used to edit specific in detail.  
+
+
+*sudo 'apt' install emacs = 
+this commands installs the emacs text editor onto my system. 
+
+    'apt' - means Advanced Package Tool
+
+*grep 
+(global regular expression print), is used to find text within files [kinda like a search file]  
+
+    i.e: case-sensitive search
+
+        grep "grep" file1.txt  - searches file1.txt for "grep" (case sensitively) within file1.txt 
+        
+    i.e: non-case-sensitive search 
+
+        grep -i "grep" *.txt - searches all text files for "grep" (not case-sensitively within this file)
+
+*find [location] [criteria]
+
+    *SuperFlaggedOutExample: 
+
+    find . name "*.txt"  
+
+        "." means ->start searching this current directory
+        
+        "-name" is -> flag stating search by filename   
+
+        "*.txt" is -> wildcard meaning any file ending in .txt
+
+
+*ls 
+
+    Flags     
+    -l 
+        long listing which provides file type data (extensions)
+
+        type-----#--username----date---time----filename 
+        d....                                -> directory 
+        r....                                -> file
+        l....                                -> linked file 
+
+        FYSA: In Linux, file extension tpye  does not determine the content of the file, the content does. 
+
+*chmod
+changes permissions on a docs 
+
+    *FYSA 
+    -to execute a file in linux, you must add execute permissions to it. 
+
+*chown 
+changes ownership of a file 
+
+*WC
+lines, words, and characters 
+
+*sort
+along with cat allows you to display text files sorted
 
 
 ?File Archiving, Compression, and decompression 
 
 
-tar - is an archiving utility, bundles multiple directories together, while preserving directory structure, permissions, and metadata. 
+*tar
+is an archiving utility, bundles multiple directories together, while preserving directory structure, permissions, and metadata. 
     
     tar -cvf - common use that 
         -c = create a new archive
         -v = verbose (show files being processed)
         -f = file (specify the archive filename)
 
-xvf - extracts (unpacks) a tar archive.
+        scenario: you want to archive and compress Desktop/folder1 
+
+        tar -czvf folder1.tar.gz ~/Desktop/
+
+* xvf  / zxvf
+extracts (unpacks) a tar archive.
 
     -x = extract (unpack the archive)
+    -z = denotes gzip compression/decompression setting
     -v = verbose (show files being extracted)
     -f = file (specify which archive file to extract)
 
-gzip - single file compression command. Commonly used with tar to compress an archived file. 
+        scenario: you want to unarchive and unzip the previous command 
+
+            *answer: 
+            tar -xzvf Desktop.tar.gz 
+
+            *better answer: (extracts files to Docs)
+            tar -xzvf Desktop.tar.gz -c ~/Documents/ 
+
+
+*gzip
+single file compression command. Commonly used with tar to compress an archived file. 
 
     a. gzip fruits.txt - compresses by adding a .gz 
         = fruits.txt.gz 
 
     b. tar -czf archive.tar.gz /path/to/files
 
-gunzip - uncompresses a file 
+
+*gunzip
+uncompresses a file 
 
     gunzip fruits.txt.gz 
             = fruits.txt 
 
-bzip2 compresses and adds a ".bz2" to the file 
-
-bunzip2 = uncompresses that file
-
-
-xz fruits.txt - compressed 
-
-unxz fruits.txt.xz -> uncompresses
+*bzip2 
+compresses and adds a ".bz2" to the file 
 
 
-set - screen editor 
-
-#!/bin/bash - tells systems to use bash to run the following scripts 
-
-shebang 
+*bunzip2 
+uncompresses that file
 
 
-#!/usr/bin/python3
+*xz 
+compresses fruits.txt - to fruit.txt.xz 
+
+*unxz 
+ it back to fruit.txt 
+
+*set
+ screen editor 
+
+* #!/bin/bash  
+tells systems to use bash. Intent here to use scripting 
+
+    *#!
+     shebang is the first line of a script, used to tell the system to run a script.  
+    
+    
+    * /bin/bash 
+    this following the shebang command, tells the system to use the bash shell program for the script
 
 
+    * #!/usr/bin/python3
+    So in this case, I'm telling the system to run the following script using python
 
 
-### Learning Lab 
-<!-- 
+?Navigational commands 
+
+*Page down
+    `/spacebar 
+
+*Page up
+    -Esc+ V or B 
+    -ctrl+b or - Moves up on screen 
+
+*vim specific navigation tool 
+    xG  (where x = a #), brings you to that line within vim 
+
 
 ?Vocabulary 
 
-*Package manager -tool for  installing removing, upgrading, configuring, and managing software packages on OS  
+*FHS
+    Linux follows the File Hiearchy Standard, where everything derives from /root 
 
-    Package Manager Mechanism - interacts with my cpu metadata and creates a local cache of it. Then compares the new and cache data and updates any outdated files
+*Package manager -tool
+    is used for compiling, installing removing, upgrading, configuring, and managing software packages on OS  
+        Package Manager Mechanism - interacts with my cpu metadata and creates a local cache of it. Then compares the new and cache data and updates any outdated files
 
-*Package - an application or tool that contains binary, configurations and depenedency files 
+*Package
+an application or tool that contains binary, configurations and depenedency files 
 
 
 *Main 2 package managers: 
@@ -788,80 +906,57 @@ terminal
 
  <!-- 
  
- ? Introduction to Linux and the Command Line 
-
-Linux - is an alternative to MacOS/Windows 
-
-CompTIA linux +
-
-    1.  is a cert that gives you core task of  Linux (system) Administrator 
-
-    2. 90 questions × 0.80 = 72 questions correct to pass
-    
-    3. Link: https://www.comptia.org/en-us/certifications/linux/v8/
-
-
-    4. Exam Objectives 
-
-        a. System management (23%) 
-
-        b. Server and User Management (20%) 
-
-        c.Security (18%)
-
-        d. Automation, Orchestration, and Scripting (17%) 
-
-        e. Troubleshooting (22%) 
-
-?Video Quizzes: 
+ ?Video Quizzes: 
     
 Quiz: CompTIA Linux+: Introduction to Linux & the Command Line
 
 
 1. What domain in the Linux+ Exam is particularly useful to new users who are frustrated when their installation of a Linux based OS doesn’t work and they don’t know how to fix it?
 
-    Linux Troubleshooting and Diagnostics
-
+    *Linux Troubleshooting and Diagnostics
 
 2. What commands would grant additional users access to use the sudo command?
 
-   B. sudo vi /etc/sudoers 
-   C. sudoedit /etc/sudoers
+   *B. sudo vi /etc/sudoers 
+        to exit this: :q!
+
+   *C. sudoedit /etc/sudoers
 
 3. What is the argument in the command [root@localhost ~]# ls -la /usr ?
-    -usr 
+
+    * /usr 
 
 4. When changing user contexts what benefit is there to using su - <username> instead of su <username>?
  
-   A. It creates a full login session that changes directories
-
+   * It creates a full login session that changes directories... 
+        so you essentially login as that user changing to their home directories 
 
 5. What Linux shell command is used to display help?
 
-    man 
+    *man 
  
 6. Question: How many Linux distributions are there?
 
-    Hundreds 
+    *Hundreds 
 
 
 7. What is the focus of Open Source software?
 
-    community collaboration
+    *community collaboration
 
 
 8. What is the impact of running the dash shell instead of a bash shell? 
 
-    - A small percentage of the commands will be different 
+    *A small percentage of the commands will be different 
 
 
 9.  In what year did Linus Torvalds announce his new free operating system?
 
-    -1991 
+    *1991 
 
 10. What command is used to run only a single command under the root administrator context?
 
-    sudoedit <command>
+    *sudoedit <command>
 
 
 ? Bourne-again Shell & Scripting 
@@ -871,7 +966,8 @@ Quiz: CompTIA Linux+: Introduction to Linux & the Command Line
    *export SCRDEPTH=value
 
     to make it available across all child session I would need to do: 
-        echo 'export SCRDEPTH=value' >> ~/.bashrc
+        
+        *echo 'export SCRDEPTH=value' >> ~/.bashrc
 
 
 2. Question: Where is the best place to put global custom Bash configuration settings that would apply to every user on a system?
@@ -890,11 +986,17 @@ Quiz: CompTIA Linux+: Introduction to Linux & the Command Line
 
     *test -d /srv
 
+        test - the command used to evaluate the conditions 
 
+        -d - checks if the path (exact path btw) exists and is a directory 
+
+        /srv - the directory you're checking for 
+
+    
 4. Which Bash configuration files can regular users edit in their home directories to override the system default Bash configuration files? 
 
-    -bash_profile
-    -bashrc
+    *bash_profile
+    *bashrc
 
 
 5. Match the description to the common Bash built-ins, and commands, that can be used in a Bash script.
@@ -907,21 +1009,21 @@ Quiz: CompTIA Linux+: Introduction to Linux & the Command Line
 
     test - ask a question used for comparing two values 
 
-6. Where is the best plaec to put globaal custom Bash configuration settings that would apply to every use on a system? 
+6. Where is the best place to put global custom Bash configuration settings that would apply to every use on a system? 
 
-    profile.d
+    *profile.d
 
 7. What should be the first line of a Bash script if you want to let the terminal know that Bash must be used to run the script? 
 
-    #!/bin/bash 
+ *   #!/bin/bash 
 
 ? Searching & Manipulating File Contents 
 
 1. What command brings up the manual information pages for creating POSIX.2 regular expression statements?
 
-    man 7 regex 
+    * man 7 regex 
 
-    btw - POSIX.2 - specifies standards for 
+    btw - POSIX.2 - are shell standards 
         -command interpreter (shell)
         -shell programming, 
         -user enviornment, and 
@@ -938,7 +1040,7 @@ Options
          \ (backslash) - Escape character
             i.e: \. matches a literal period instead of "any character"
 
-        - (hyphen) - Ramge of values 
+        - (hyphen) - Range of values 
             [a-z] matches any lowercase letter from a to z 
                     note: only works inside brackets
 
@@ -953,25 +1055,25 @@ Options
 
 3. What command searches for all files and subdirectories in the /media directory for the name Bob?
 
-    grep –r Bob /media
+    * grep –r Bob /media
 
 4. What command would list only the first names from a comma separated file containing only employee names where the first field contains the last name and the second field contains the first name?
 
-     cut –f 2 –d"," employees.csv
+    * cut –f 2 –d"," employees.csv
 
 5. What commands would find and return the lines that contain the names Bob, Bobby, Rob, or Robert in a text file?
 
-    cat mydoc.txt | grep –E "Bob|Bobby|Rob|Robert"
+    * cat mydoc.txt | grep –E "Bob|Bobby|Rob|Robert"
 
-    cat mydoc.txt | grep –E "Bob*|Rob*"
+    * cat mydoc.txt | grep –E "Bob*|Rob*"
 
 6. Which command deletes any line that contains the word “remove” from a text file called myInfo.txt?
 
-    sed ‘/remove/d’ myinfo.txt
+    * sed ‘/remove/d’ myinfo.txt
 
 7. What command would sort, in descending order, a text file containing a list of employee names?
 
-    sort –r employees.txt
+   *  sort –r employees.txt
 
   -->
 
@@ -1011,34 +1113,29 @@ Question at position 1
 --------------
 
 To navigate to the end of a line, press ______.
-
-$
+    * $
 
 
 If you have more lines in the file, then you can jump a specific number of lines by entering ______ along with _____.
-
-#, j
+    * #, j
 
 
 To navigate to the end of a word, press ____ and you will jump to the end of the word.
-e
+    * e
 
 
-When working with the vi editor, other than pressing “I”, pressing which another key will invoke the insert mode?
--a
-
-
+When working with the vi editor, other than pressing “I”, pressing which other key will invoke the insert mode?
+    * -a
 
 In the command mode, pressing which letter would move one character to the left?
-
-h
+    * h
 
 
  -->
 
 
-
 ## Homework
+
 
 <!-- 
 
@@ -1049,7 +1146,7 @@ Question 1: To have a script send an email automatically, which command would yo
 Question 2: True or false: GUI text editors for ASCII are superior to text-mode ASCII text editors because the GUI editors support underlining, italics, and multiple fonts.
 
     *Answer: False 
-        (ASCII is plain text - it doesn't support formatting like underlining, italics, or multiple fonts regardless of the editor)
+        (ASCII is plain text & doesn't support underlining, italics, or multiple fonts regardless of the editor)
 
 Question 3: Which type of file is nano LEAST likely to be useful for examining or editing?
 
@@ -1058,7 +1155,7 @@ Question 3: Which type of file is nano LEAST likely to be useful for examining o
 
 Question 4: An un-encrypted password stored in the /etc/shadow file. [What does cat /etc/passwd show?]
 
-    *Answer: A list of the users on that Linux computer.
+    *Answer: /etc/passwd displays a list of the users on that Linux computer.
 
 Question 5: Which of the following are the two major Linux package management systems?
 
@@ -1073,10 +1170,11 @@ Question 7: If you were a Linux system's administrator and wanted to see who is 
    * Answer: w
 
 Question 8: True or false: The following script launches three simultaneous instances of the terminal program.
-#!/bin/bash
-Terminal
-terminal
-terminal 
+
+    #!/bin/bash
+    Terminal
+    terminal
+    terminal 
 
     *Answer: False
      (Terminal vs terminal are different commands, and they run sequentially, not simultaneously)
@@ -1118,12 +1216,12 @@ Question 15: What is the purpose of conditional expressions in shell scripts?
 Question 16: Which of the following type of user information might you find in the /etc/passwd file? (choose three)
 
     Answer: 
-    *The path to the user's default text-mode shell,
+    *The path to the user's default text-mode shell
     *The UID 
     *The user's account home directory
 
 
-Question 17: If you are in the Vi text editor command mode, which keystroke would you type to undo a change?
+Question 17: If you are in the vi text editor command mode, which keystroke would you type to undo a change?
 
     *Answer: u
 
@@ -1193,7 +1291,7 @@ Question 30: True or false: Many (not all) configuration files use a hash mark (
     *Answer: True
 
 
-Question 31: Which of the following extensions would you use at the end of the script name?
+Question 31: Which of the following extensions would you use at the end of a script name?
 
     *Answer: .sh
 
@@ -1250,7 +1348,7 @@ Question 41: Which file now stores users passwords in the Linux OS?
 
 Question 42: Which two keyboard characters can denote an account with no password?
 
-    Answer: * and !
+    *Answer: * and !
  -->
 
 
@@ -1334,9 +1432,7 @@ Question 42: Which two keyboard characters can denote an account with no passwor
 
     mv 
 
-    cp - 
-        i.e: cp etc/fstab .  
-            ^your copying a file from etc/fstab to current d
+    cp 
     
     mkdir 
 
@@ -1344,7 +1440,7 @@ Question 42: Which two keyboard characters can denote an account with no passwor
 
 9. Which of the following actions does the find command perform 
 
-    Searching a file in a directory 
+    !Searching a file in a directory 
 
 
 10. Which of the following commands should be used to compress more than two files 
@@ -1358,10 +1454,7 @@ Question 42: Which two keyboard characters can denote an account with no passwor
 
     ^ - identifies the start of a line of text inside a file that you're searching through
 
-
-12.
 -->
-
 
 
 
@@ -1470,9 +1563,9 @@ ps
     shows your current processes info
 
 ip route 
-    fundamental networking utility used to view, add, or delete entries in the kernel's IP routing table
+    ip route show - shows routing information for IP packets  
+    fundamental networking utility used to view, add, or delete entries in the kernel's IP routing table 
 
-    shows routing table info 
 
 cat /etc/resolv.conf 
     displays the contents of said file. In this case, that file speaks to DNS resolver 
@@ -1560,14 +1653,21 @@ ipconfig - windows command to display network configuration
     -default gateway 
     -DNS servers 
 
+*ifconfig
+    displays and configures network interfaces and IP addresses
 
 ip addr or ip a 
     -shows network interface details including IP addresses, MAC addresses, interface status.... 
     - modern replacement for ipconfig 
 
 ip addr show 
-    Shows network interface configuration?
+    A list of active IP addresses and network interfaces
 
+ss
+    active network connections and sockets 
+
+host 
+    quieries client configuration 
 
 network config
 
@@ -1585,7 +1685,7 @@ vmstat - shows system performance metrics including
     -process statistics overtime 
     -good for diagosing performance bottlenecks and monitoring systems health with periodic snapshots 
 
-dmseg (display message/diagnostic message), 
+*dmseg (displays Kernel related diagnostic/initialization messages ), 
 
     the low level boot and hardware messages from the Linux kernel. the low-level boot and hardware messages from the Linux kernel. 
 
@@ -1702,7 +1802,6 @@ What is the octal value for the -rw-rw-rw- permission?
  
 
 
-
 *Directory Breakdown
 
     * / - (root) 
@@ -1806,10 +1905,12 @@ What is the octal value for the -rw-rw-rw- permission?
         -repository data.  
 
     * /sys - (system) 
+    -Used to expose device attribute information  ss
+    -Similar to /proc/ but more structured
     -A way to interact with the kernel 
     -Created every boot 
     -Virtual filesystem exposing kernel objects, hardware info, and device drivers. 
-    -Similar to proc but more structured. Used for hardware and driver information. 
+    -is cousings with /proc/!!! REMEMBER 
 
     *tmp - (temporary) 
     -files temporarily stored by apps and users. Usually cleared on reboot. 
@@ -1882,6 +1983,8 @@ What is the octal value for the -rw-rw-rw- permission?
 ## Batttle Plan
 <!-- 
 
+?Creating Users and Groups 
+
 //1. Lectures (no notes)
 
 //2. Videos & their questions (skipped)
@@ -1890,7 +1993,7 @@ What is the octal value for the -rw-rw-rw- permission?
 
 //4. Learning lab 
 
-todo 5. Study Guide Notes 
+// 5. Study Guide Notes 
 
  todo 6. Final Exam Review
 
@@ -1898,46 +2001,390 @@ todo 7. Homework Questions -->
 
 
 ## Lectures 
-<!-- 
+<!--  
 
-? Vocabulary
-
-Permissions in Linux 
-    rwx - read, write, execute 
-
-UGO order  
-    user|group|others- 
-
-    i.e:    -rwxr-
-
-Special numbers? 
-x- 1
-w- 2
-r- 4
-    create hother permissions 
-    rwx-order of how permission are written 
-
-    3 -wx 
-    4 
-
-! Review 7 combinations of Permissions video 
-
-
-? Commands 
-
-chmod - changes permissions of a file/directory 
-
-chown - changes ownwership / priveledge of a user 
-
-
-
-
+Skipped-> StudyGuide was $!!! 
 
  -->
 
 
 
-## Learning labs (Flex)
+## Study Guide 
+
+
+<!-- 
+
+?Vocabulary 
+
+
+*Defense-in-Depth 
+Speaks to redhat's approach to implementing defense-in-depth (secure coding practices, automation, devsecops, etc)
+
+GUI 
+-In Ubuntu this is under -> [Systems Settings -> User Accounts] 
+
+Terminal 
+- useradd command 
+
+
+*KEY SYSTEM Directories -------------------------
+
+    Think of a company building...
+    -/etc/passwd is the employee directory (names, desks), /
+    
+    -etc/shadow is the locked HR vault with salary/sensitive data, 
+    
+    -/etc/group is the org chart showing which team each person belongs to.
+
+* /etc/passwd
+useraccounts, UID, GID, home dir, shell. Passwords show as x (placeholder)
+
+* /etc/shawdow  
+-encrypted passwords
+-root only access 
+
+*etc/group 
+-group names, GIDs, member list
+
+*etc/skel 
+template files that are copied to every new user's home directory (i.e -  .bashrc, .profile)
+
+
+
+
+*Understanding UID Ranges - Who's who?! ---------------------
+
+    Consider a hotel 
+    -UIDs 1-999 are service staff (housekeeping, maint., etc)
+    -UIDs 1000+ are paying guest or normal users of the hotel
+
+
+* 0 
+root / superuser, for full sys. control
+
+* 1 - 99
+Reserved system accounts 
+
+* 100 - 999
+Sys. Services (apache, mysql etc)
+
+*1000+ 
+Regular human user accounts 
+
+
+*Reading Permission Strings ---------------
+
+
+*Understanding Permission Strings: 
+
+    -Permissions are like traffic lights for 3 diff roads
+    -Each category has their own set of 'traffic lights' identifying whether they have Read, Write, and Execute Permissions. 
+          
+    Categories that exist: 
+        1. Owner 
+        2. Group  
+        3. Others 
+
+* ls -l  
+    to get permission details in linux terminal 
+
+*Group Permissions Order in strings 
+
+                user|group|others
+            d | xxx| xxx | xxx        
+            1.   2.   3.    4. 
+    
+    
+    *1. first character means directory, but can also be (-, l)
+                                                file/simlinked
+
+    *2-4. 
+    -each group gets three possible permissions allocated 
+    -if a permission slot is not allocated that group member gets a "-" 
+
+    *Permissions Nomenclature/Optionality   
+        "rwx" - (read, write, execute)  
+
+    *Special Nunbers Correlated with Permissions 
+        Remember numbers are ranked from 1 being most impactful (excute) - to 4 being the leat (read)
+            r-4
+            w-2
+            x-1 
+
+                *YOU CAN NOW USE CHMOD (see command section below) 
+
+
+
+
+*SUID, SGID, Sticky - Special Permission Bits ----------------------------------------
+-These are special permissions that can be applied to folders
+
+
+
+    *1.  SUID (Set User ID) 
+    -wherever this special permission is set, it runs files/directories with the permission of root 
+    -typically ran against a root file 
+    -i.e: You want to set this on the PW utility so a student can change their pw:  
+
+    -To set:  
+         
+         * chmod u + s
+
+    -result: 
+        11 /etc/shadow
+    ---------- 1 root root 1502 Jun 28 11:01 /etc/shadow
+
+
+
+    *2. SGID (Set Group ID)
+    -Change the ownership of a file, when its saved to a specific folder 
+    -i.e: giving a group ownership of a file, after and individual created it.
+
+
+
+
+    *3. Sticky Bit 
+    -If this is set to a folder, ONLY THE USER can delete said fi
+
+
+
+*unmask Command - System Default Permission Setter:  
+-When a contractor builds a new house (file), unmask is the building code that says "every new building must remove these features"
+-How it works: 
+    
+    *Files start at 666
+     
+        #unmask  022: 
+            666 - 022 = 644 (files)  
+
+        #unmask 077
+            666 - 077 = 600 
+
+    *Directories start at 777
+
+        #unmask 022: 
+            777 - 022 = 755 (dirs)
+        
+        #unmask 077: 
+            777 - 077 = 700 
+
+
+
+?Commands 
+
+*find / -user <username>
+    find by user 
+
+*find / -perm -4000
+    find by SUID
+
+
+
+
+*unmask 0022 
+        ^SPECIAL PERMISSIONS IF YOU WANT TO ADD THEM 
+
+        How to 
+        -changes what permissions are removed from new directories 
+        -Remember D=777 | f=666 .... then subtract the unmask from the dir/file = answer 
+
+
+*Chown 
+-used for changing ownwers of files
+    
+     i.e: 
+     
+     *1.  sudo chown travis filename|dir name 
+                  (new owner) 
+     
+     *2.  sudo chown travis:travismedia filename|dir
+                   (owner):   (group)
+
+*Chmod Commands: 
+-You can change ownwer|group|other permissions using Octal or Symbolic meothods
+-This grants said person(s) varying permission rwx permissions over a group 
+
+    
+*Octal Notation 
+
+    Common change Permissions 
+
+        *File Baseline: 
+
+            chmod 644 filename
+            
+                ownwer: read/write  
+                group:  read 
+                others: read 
+
+        *Directory Baseline: 
+            
+            chmod 755 script.sh 
+
+                owner: read/write/execute 
+                group: read/execute
+                others: read/execute 
+
+        
+            *chmod -R 755 /var/ 
+            RECURSIVELY IMPLEMENT PERMISSIONS 
+            
+
+*Symbolic Method: 
+-can also be used to change person(s) dir/file permissions
+
+        
+        * chmod u+x script.sh 
+            
+            ADDING EXECUTE FOR THE USER 
+            u - representing the user 
+            +x - adding execute permissions 
+
+
+        * chmod g-w file.txt 
+
+            REMOVES WRITING FOR THE GROUP
+            g - representing the group 
+            -w - removing writing permissions 
+
+        * chmod o=r file.txt 
+
+            SETS OTHERS TO READ ONLY 
+            o - denotes others 
+            =r - denotes 'others' have reading rights 
+
+*Other Symbolic methods:  
+            
+        *chmod go-w file.txt     
+            REMOVE WRITE FROM OTHERS AND GROUP 
+            
+            *chmod a+r file.txt 
+            ADD READ FOR ALL 
+
+
+*chown Command: 
+        
+        *sudo chown john file.txt
+            NORMAL USE CASE 
+
+        *sudo chown john:developers file.txt
+            Grant   (individual/group) ^ownership of this 
+
+        *sudo chown -R john:staff /project 
+            RECURSIVELY CHANGE OWNERSHIP OF A DIRECTORY 
+
+            
+        *sudo chgrp developers file.txt
+            GRANT A GROUP OWNERSHIP OF A FILE 
+            
+        *sudo chgrp -R staff /project 
+            RECURSIVELY GRANT A GROUP DIR OWNWERSHIP 
+        
+
+    
+
+*Username Management Commands-----------
+-used within dir:
+    etc/password
+    etc/shawdow
+    etc/group 
+
+*sudo useradd <username>
+    creates a user account
+
+    Parameters available: 
+    
+        *-k | --skel, 
+        specifies configuration files to another directory other than the default of /etc/skel
+
+        * -M 
+        forces the system to not automatically create a home directory 
+
+        * -s | --shell
+        sets the name of the user's dedault login shell. the default is /bin/bash 
+
+        * -u | --id
+        creates an account with a specified UID 
+
+        * -o or --non-unique
+        enables a single UID number to be reused; this option is passed when creating a second account with an already used UID 
+
+    Example: 
+
+        * useradd -m -s /bin/bash username
+        this creates a user with directory & Bash shell 
+
+
+*passwd username 
+    sets/changes passwords 
+    COMMONLY USED! 
+
+*usermod -c "Name" username
+    change comment / full name 
+
+        flags
+            -aG: causes the specified groups to be added to an account
+            -comment: specifies the comment field for the user (full name)
+            -d: specifies the account's home directory, deault is -> /home/<username> 
+
+*usermode -L username 
+    locks account (by adding !)
+
+*usermod -U 
+    unlocks account 
+
+*usermod -aG group username
+    add to supplementary group 
+
+    Common mistakes here: 
+    
+        1. usermod -G replcaes all existing groups! 
+           *usermod -aG accurately appends users to a group 
+
+*userdel username 
+    Deletes the users (keeps the home dir)
+
+*userdel -r username 
+    Deletes the user (and their dir)
+
+*id 
+    shows you the current UID, GID, and all groups 
+
+
+
+*Group Management Commands ------------------------------
+
+    -groups are like keycards at a building... 
+    -Primary group is your department (your're always in it)
+    -Supplementary groups are extra access cards for other rooms (labs, sever rooms, etc.)
+
+
+*group 
+    displays current user's group information 
+
+*groupadd groupname 
+    creates a new group 
+
+*groupdel groupname 
+    Deletes a group 
+
+*gpasswd -a user group
+    add user to group 
+
+    NOTE: after adding a user to a group, they need to either:
+        -logout and log back in
+        -run: newgrp groupname  
+
+*gpasswd -d user group 
+    removes user from group 
+
+*getent group groupname 
+    views group details
+     
+
+
+
+ -->
 
 
 ## Video & Their Questions  
@@ -1983,11 +2430,34 @@ What is the default value of SUID?
 
 ## Homework Assingment  
 
+<!-- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ -->
+
+
+
+
 
 
 
 
 # Week 5
+<!-- !Link to flashcards: https://claude.ai/public/artifacts/7e9ddafd-aba1-4355-993b-6a1014948738 -->
+<!-- follow steps to get the exam going https://docs.google.com/document/d/13JB_zU4Yn6DcgiEc9w0IXeSaQpc0Z3HL4z_qvNZuE_Y/edit?userstoinvite=dicetherhg%40gmail.com&sharingaction=manageaccess&role=writer&tab=t.0 -->
 
  ## Batttle Plan
     <!-- 
@@ -2010,30 +2480,358 @@ What is the default value of SUID?
 
 
 ## Lectures 
+<!-- Quiz 1: 22/30... Wrong answers belwo 
+
+Topics to review for exam:
+
+    -distro / programs / file managers and their function 
+    - port numbers 
+
+
+    Questions wrong: 
+
+    2:Which of the following programs would you use as a web server with experts knowledge?
+        !NgineX - web server 
+
+    8: What is the purpose of the su command in Linux? Choose Two)???????????????
+        !To switch from GUI to a text mode 
+        !to switch to a different user profile. 
+
+
+    9: What distro would you most likely find on a cell phone? 
+        !Android 
+
+    11: True or false: The Linux kernel was developed as part of a the GNU's Not Unix (GNU) project. 
+        !false 
+
+    17:What two suites are most closely related to one another: 
+        !LibreOffice 
+        !Apache OpenOffice 
+
+    24: What is SMTP port #? 
+        !Port 25 
+
+
+
+--------- Quiz 2 (15/20)
+
+
+Which of the following character in a shell prompt indicates the shell is running as root user
+  !  #
+
+
+Which of the following directories contains information, documentation, and example configuration files for installed software packages?
+   ! /usr/share/doc/
+
+
+Which of the following commands adds the directory /new/dir/ to the PATH environment variable?
+    ! export PATH=/new/dir: $PATH
+
+
+The character "\" in a command line?
+    ! The continuation - that splits a command across multiple lines
+
+
+
+Which of the following switches would you use to extract a tar.gz file?
+    ! -xvz
+
+
+--> 
+
 
 
 
 
 ## Learning labs (Flex)
+<!-- 
+
+What command is used to search for a specific string in a file in Linux?
+
+    *grep
+
+Which of the following commands are used to get information to properly use the ls command? (Choose two)
+
+    *man ls 
+    *info ls 
+
+
+Which command is used to rename a file in Linux?
+
+    *mv  
+
+
+Which command is used to create a new empty file in Linux?
+
+    *touch 
+
+Which command is used to search for files or directories in Linux?
+
+    *find 
+
+        (!locate) because that command only searches a prebuilt compressed database file since the last update 
+
+What command is used to remove a file in Linux?
+    rm
+
+What command is used to list all files and directories in a directory?
+    ls 
+
+What command is used to display the manual page of another command in Linux?
+    man 
+
+
+What command is used to display the current directory in Linux?
+    pwd 
+
+
+Which of the following are typical services offered by public cloud providers? (Choose all that apply)
+
+    Iaas, SaaaS, PaaS 
+
+Which directory path contains information, documentation, and example configuration files for installed software packages?
+
+    /usr/share/doc 
+
+Which command is used to edit a text file in Linux?
+    nano
+
+
+Which command is used to change directories in Linux?
+    cd 
+
+Which command is used to display the contents of a file in Linux?
+    cat 
+
+What is the symbol used to represent the home directory in Linux?
+
+    ~ 
+
+Which command is used to create a new directory in Linux?
+    mkdir 
+
+
+What command is used to change file permissions in Linux?
+    chmod 
+
+
+What command is used to copy a file in Linux?
+
+    cp 
+
+Which statement is true about a recursive directory listing?
+
+    It includes the content of sub-directories.
+
+What command is used to kill a running process in Linux?
+
+    kill 
+
+Which command adds the directory /new/dir/ to the PATH environment variable?
+    !export PATH=/new/dir: $PATH
+
+
+Which of the following characters in a shell prompt indicates the shell is running with root privileges?
+
+    # 
+
+
+What command is used to find and replace text in a file in Linux?
+    !sed (stream editor)
+
+
+Which command is used to view running processes in Linux?
+
+    ps
+
+Which command is used to display disk usage in Linux?
+    df 
+
+
+To exit out of a user directory , what command do you use? 
+
+    !exit 
+
+
+Displays how long it takes to execute a command
+    
+    !time 
+
+Users home directory is located under this directory 
+
+    !home 
+
+
+This command takes you to the end of a line 
+
+    ctl + e 
+
+
+This command lets you go to the PREVIOUS dir 
+
+     cd -   (think of cd "/-\--" as a P 
+
+Which command lets you move ONE LVL UP in the dir chain 
+
+     cd .. or cd --  (choose this one second)
+
+
+System binary directory that only a root user can use is located where 
+
+    sbin 
+
+
+Long term storage 
+    hardrive 
+
+
+This command brings you to the home directory 
+
+    cd ~ 
+
+
+This command displays date + time 
+    date 
+
+
+short term mem
+    RAM 
+
+How to make a file executable the right way 
+
+
+Command used to wc in a file? 
+
+    !wc -l a.txt 
+
+
+What command takes you to the start of a file 
+
+    !ctl + a 
+
+These command lets you go to the paraent dir 
+
+    cd .. / cd 
+
+this command list all of the active logins 
+
+    !who 
+
+How do you clear your screen? 
+
+    ! ctl +L 
+
+
+Displays the current month 
+    !cal 
+
+
+To switch user, change user, change into a user's home dir 
+
+    !su -
+
+Command used to wait a couple of seconds, sometimes used in scripts
+
+    !sleep
+
+Displays how much time it took to complete a command 
+    !time 
 
 
 
+Core Unix tools include 
+
+    !GNU tool set 
+    !X Windows System 
+
+Which options in the find command can you use to find files owned by a specific user? 
+
+    ! -uid
+    ! -user 
+
+How can you browse to a new node using the standard info documenation reader? 
+
+    !Select a link using the arrow keys and press the enter key 
 
 
-## Video & Their Questions  
+Which version of GPL is Linux current under 
+    !2 
 
 
+Which of the following commands will print lines from the file world.txt that contains matches to changes/changed? 
+
+    !tar change[ds] world.txt 
+
+What bash scripting keyword terminates a case statement ? 
+
+    !esac 
+
+which of the following is the default linux desktop env for the ubuntu distro 
+
+    !Unity 
+
+how many man page sections are there in total
+
+    !8 (man ate!!!)
+
+Which desktop enviornments are default for Fedora and Debian? 
+
+    !GNOME 
+
+You want to check the content of  a file without extrating it. files called "data79.tar" 
+
+    !tar tvf data79.tar 
 
 
-
-## At Home Graded Labs
-
-
+Which regular expression string matches any sequence of characters of any length? 
+!       .* 
 
 
+Which of the following text editors runs as a text-mode program when launched in text mode but also provides a GUI version for user in a GUI environment? 
 
-## Study Guide Notes 
+    !emacs 
 
+
+Where does the kernel store its rung buffer logs? 
+    ! in memory 
+
+What symbol do you place after a command to run the program in the backgrounf? 
+
+!       & 
+
+
+Which of the following outcomes will you get after executing the # tar -cvf/tmp/etc.tar/etc command? 
+
+    !archived file 
+
+Which command would create a zip file containing the files holiday.tf and desc.txt and compress it as much as possible? 
+
+    ! zip -9 trip.zip holiday.tf desc.txt 
+
+What keystroke deletes a line of text when using nano
+    
+    !ctl + k 
+
+which of the following commands is equivalent to typing apropos 
+    !man -k 
+
+Ubunut release a new version of it's OS every 
+
+    !6 years
+
+
+Which of the following programming lanuages is most often implemented as a compiled language? 
+
+    !C++ 
+
+
+Where does the kernel store it's ring buffer logs? 
+    !In memory 
+
+Which of the following is the default linux desktop environment for Ubunu distro of Linux 
+    !Unity 
+
+ -->
 
 
 
@@ -2042,5 +2840,362 @@ What is the default value of SUID?
 ## Final Exam Review
 
 
+<!--
+
+42/45, Good Job. 
+Questions I wrong: 
+
+
+Which of the following actions does the find command perform 
+
+    !Searching a file in a directory 
+
+Which of the following makes a good password?
+
+    !None of the above 
+        (user error, I knew this one!)
+
+
+Which of the following programs enable root to set the ownership of the file? 
+
+    !Chown 
+    !Nautilus 
+
+--> 
+
+
+
 
 ## Homework Assingment  
+
+<!-- 
+* You did well on this homework 100/100 
+
+ -->
+
+
+## 598 Question Quiz 
+
+<!-- 
+
+What distinguishes hard disk drives from solid-state drives in terms of their fundamental characteristics? (Choose two)
+
+    *1. Hard Drives contain mechanical components and moving parts whle Steady State Drives are completely solid-state 
+
+    *2.SSDs deliver significantly faster data access and transfer speeds than HDDs
+
+
+
+When implementing reverse DNS resolution, how would the hostname mapping for IP address 198.51.100.165 be stored in the DNS system?
+
+    !B. Using a PTR record within the 165.100.51.198.in-addr.arpa domain
+
+
+Which interface technology is commonly employed to establish connections between storage drives and the computer's motherboard?
+
+    SATA bus for storage device connectivity 
+
+
+A development team with extensive Red Hat Enterprise Linux experience wants to deploy a Linux server for a personal project without subscription costs. Which distribution would best leverage their existing expertise?
+
+    CentOS, which derives directly from the Red Hat Enterprise Linux sources 
+
+
+
+What type of system information does the 'top' utility provide when executed in a Linux environment?
+
+
+    Active processes ranked by CPU utilization or memory consumption
+
+
+Which command-line utility can perform DNS name-to-IP address resolution in Linux systems?
+
+    host for DNS lookup and resolution operations
+
+
+Which statements accurately describe the functionality of the 'dmesg' command? (Choose two)
+
+    It displays contents stored in the Linux kernel's ring buffer
+
+    Older log entries may become unavailable due to buffer size limitations
+
+
+Which type of output would be generated by executing the 'last' command?
+
+    ! User session record: root tty2 Wed May 17 21:11 - 21:11 (00:00)
+
+
+What numeric user identifier (UID) is assigned to the root user account in Linux systems?
+
+    0 
+
+
+What permission configuration results from executing 'chmod 654 file.txt' on a regular file?
+
+    6 - wr
+    5 - rx
+    4 - r 
+
+            -rw-r-xr--  (good stuff!)
+
+
+Which statement correctly describes file ownership principles in Linux file systems?
+
+    Every file belongs to exactly one user and exactly one group
+        fun facts: 
+            -just becauase you own the file, doesn't mean you have permissions 
+            -Every file must have one group / owner.. when deleted, files become orphaned files, requiring a new ownwer 
+
+What permission configuration is typically applied to the /tmp/ directory?
+
+    777 ( with sticky bit)
+
+
+Which command creates a new user account along with a home directory populated with default configuration files (/etc/skel)?
+
+    useradd -m luke 
+
+
+Which types of user information are stored within the /etc/passwd file? (Choose three)
+
+    1. Numeric user identification (UID)
+    2. User account name
+    3. Default shell assignment
+
+
+Which tar command options enable compression functionality? (Choose two)
+
+    1. -z for gzip copmpression integration 
+    2. -j for bzip2 compression integration
+
+Which keyword initiates a loop structure in shell scripting programming? 
+
+    for
+
+Which command generates an archive file named luke.tar containing all contents from the ./luke/ directory?
+
+
+    tar -cf luke.tar ./luke/ 
+
+Which keyboard input will terminate the less text pager application?
+
+    q
+
+
+Given a file with permissions -rwxr-xr-x named lab.sh containing valid shell script code, which methods can execute this script? (Choose two)
+
+    ./lab.sh 
+    bash lab.sh 
+
+Which command configuration will sort the output produced by the export-logs command?
+
+    export-logs | sort 
+
+In a directory containing files a.txt, b.txt, and c.cav, what output would result from this shell script: for file in *.txt do echo $file done
+
+    a.txt, b.txt 
+
+
+Which command will locate the file file1.txt within the /home directory hierarchy?
+
+    find /home -name file1.txt 
+
+A file named lab.sh contains valid shell script code, but attempting to execute it with ./lab.sh results in 'Permission denied'. What action is required for successful execution?
+
+    Enable the execute permission bit in the file's permission settings
+
+
+How would you best define a Linux distribution?
+
+    B. A comprehensive package containing the Linux kernel bundled with system utilities and additional software
+
+Which package management system is utilized in Red Hat-based Linux distributions?
+
+    rpm 
+
+
+Which application serves as a graphical editor specialized for vector graphics creation and editing?
+
+    Inkscape 
+
+Where does the Raspberry Pi system store its operating system?
+
+    On a removable microSD card inserted into the Raspberry Pi 
+
+
+What aspects are specified by free software licensing terms? 
+
+    Legal conditions governing software modification and distribution rights 
+
+
+What makes web browser cookies a potential security and privacy concern?
+
+    Cookies enable user identification and cross-site tracking capabilities
+
+Which service models are commonly offered by public cloud providers? (Choose three)
+
+    PaSS
+    SaaS 
+    IaaS 
+
+When entering lengthy commands at the shell prompt, which single character enables splitting the command across multiple lines?
+
+    \ 
+
+
+
+Which character symbol in a shell prompt indicates that the shell is operating with root administrative privileges?
+
+    # 
+
+
+Which commands provide comprehensive information about proper 'ls' command usage? (Choose two)
+
+    D. man ls
+    E. info ls
+
+
+What characterizes a recursive directory listing operation?
+
+    It displays contents of subdirectories in addition to the current directory
+
+The command 'rm Music' produces the error 'rm: cannot remove Music/: Is a directory'. Which commands can successfully remove the Music directory if it's empty? (Choose two)
+
+    rmdir Music 
+
+    rm -r Music 
+
+Which directory contains package documentation, information files, and configuration examples for installed software?
+
+    A. /usr/share/doc/
+
+Which command correctly appends the directory /new/dir/ to the PATH environment variable?
+
+
+    E. export PATH=/new/dir:$PATH
+
+
+
+From the current location /home/user/Downloads/, executing 'ls ../Documents/' will display contents from which directory?
+
+    A. /home/user/Documents/
+
+
+In a directory containing files file1.txt, file2.txt, and file3.csv, which command will copy the .txt files to /tmp/?
+
+    cp *.txt /tmp/
+
+
+Which command would show you the absolute path value for your current directory?
+
+    pwd
+
+Which DNS record types are designed to store IP address information? (Choose two)
+
+!    AAAA
+!   A
+
+
+Which value represents a valid Linux process identification number?
+
+     21398
+
+
+Which network protocol provides automated IP address configuration services for network devices?
+
+!    E. DHCP (Dynamic Host Configuration Protocol) for IP address assignment
+
+
+Which device file designation represents a hard disk partition in the Linux file system?
+
+
+!    /dev/sda2
+
+    /dev/sda2 represents the second partition on the first SATA drive. The Linux device naming convention follows the pattern /dev/sdXN where X indicates the drive letter and N specifies the partition number.
+
+
+Which of the following programs would you use as a web server with expert knowledge?
+
+    ! Apache
+    ! NGINX
+
+A company is looking to switch to a distribution of Linux. Which of the following distros would still be receiving security updates?
+
+     Ubuntu LTS
+
+Which of the following distributions is a descendant of Red Hat?
+
+
+    CentOS 
+
+What Linux distribution are you MOST likely to find in use on a cell phone?
+
+
+    Android 
+
+Which of the following is a common server program?
+
+    Samba 
+
+
+Which of the following are Linux file management programs? (Choose all that apply)
+
+    Thunar
+    Dolphin
+    Nautilus
+
+
+Which of the following are programming languages? (Choose all that apply)
+
+   
+    !C
+    !C++
+    !Java
+    !Perl (Pronounced Pearl)
+    !PHP (Hypertext Preprocessor)
+
+
+True or false: It's possible for an end user to make good use of Linux without directly interacting with a text-mode shell.
+
+    true 
+
+
+True or false: The Linux kernel was created as a component of the GNU project's initiative.
+ 
+    False 
+
+
+Which term most accurately describes the Linux kernel?
+
+    Open source 
+
+
+What type of license defines conditions for modifying and distributing the licensed software?
+
+    !GPL (GNU General Public License)
+
+What is the port number for the DNS protocol?
+
+    53
+
+What is the single word that indicates the beginning of a loop statement in a bash script?
+
+
+    for 
+
+What is the port for SMTP? 
+
+    !25 
+
+
+
+? Scored 49 out of 58 (84%)
+💡 Next Steps for Continued Learning:
+Set up a virtual Linux lab, practice daily command line usage, explore system administration tasks, and work on real-world projects to apply your knowledge practically.
+
+
+ -->
+
+
+
+
